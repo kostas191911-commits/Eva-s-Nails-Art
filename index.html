@@ -1,0 +1,1031 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eva's Nails Art | Nagelstudio Stuttgart</title>
+  <meta name="description" content="Eva's Nails Art – Professionelles Nagelstudio in Stuttgart. Maniküre, Pediküre, Gel, Nail Art, Lash Lift, Brow Lamination &amp; Microblading.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Montserrat:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f7efe8;
+      --bg-deep: #efe4d9;
+      --cream: #fff9f4;
+      --blush: #e8cfc3;
+      --rose: #c99a88;
+      --rose-deep: #a67a68;
+      --gold: #c4a06a;
+      --gold-light: #d9bc8a;
+      --text: #3d322c;
+      --text-soft: #6e5c52;
+      --dark: #2a211c;
+      --line: rgba(166, 122, 104, 0.22);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      font-weight: 400;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+    }
+
+    a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
+    img { max-width: 100%; height: auto; display: block; }
+
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(247, 239, 232, 0.93);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 70px;
+    }
+
+    .logo-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.55rem;
+      font-weight: 600;
+      color: var(--dark);
+      letter-spacing: 0.04em;
+    }
+
+    .logo-text span {
+      color: var(--rose-deep);
+      font-style: italic;
+      font-weight: 500;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: var(--text-soft);
+    }
+
+    .nav-links a:hover { color: var(--rose-deep); }
+
+    .nav-cta {
+      background: var(--dark) !important;
+      color: var(--cream) !important;
+      padding: 10px 22px;
+      font-size: 0.78rem !important;
+      letter-spacing: 0.08em;
+    }
+
+    .nav-cta:hover {
+      background: var(--rose-deep) !important;
+    }
+
+    .burger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 6px;
+    }
+
+    .burger span {
+      width: 22px;
+      height: 1.5px;
+      background: var(--dark);
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 92vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 110px 20px 90px;
+      background: 
+        radial-gradient(ellipse at 20% 30%, rgba(201, 154, 136, 0.18) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 70%, rgba(196, 160, 106, 0.12) 0%, transparent 45%),
+        linear-gradient(165deg, var(--bg) 0%, var(--bg-deep) 50%, var(--blush) 100%);
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .hero-video {
+      position: absolute;
+      inset: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      z-index: 0;
+      background: #e8d5cb url("hero-poster.jpg") center / cover no-repeat;
+      pointer-events: none;
+    }
+    /* Mobile browsers may delay autoplay; the poster remains visible as a fallback. */
+    @media (max-width: 900px) {
+      .hero { min-height: 92vh; min-height: 92svh; }
+      .hero-video { object-position: center center; }
+    }
+    @media (max-width: 600px) {
+      /* Keep same look as desktop – only adjust spacing for small screens */
+      .hero {
+        min-height: 100vh;
+        min-height: 100svh;
+        padding: 100px 20px 70px;
+      }
+      .hero-video {
+        width: 100%; height: 100%;
+        object-fit: cover;
+        object-position: center center;
+      }
+      /* Same overlay as desktop – do NOT change colors */
+      .hero-content { width: 100%; max-width: 100%; }
+      .hero .eyebrow { font-size: 0.72rem; letter-spacing: 0.2em; }
+      .hero h1 { font-size: clamp(2.8rem, 11vw, 3.8rem); line-height: 1.1; }
+      .hero p { font-size: 1rem; margin-bottom: 32px; }
+      .hero-content .btn {
+        display: inline-block;
+        width: auto;
+        min-width: 200px;
+        margin: 6px;
+        padding: 14px 28px;
+      }
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(112, 55, 39, 0.42), rgba(139, 75, 61, 0.32));
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -20%;
+      right: -10%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(201, 154, 136, 0.15) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .hero-content {
+      max-width: 680px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero .eyebrow {
+      font-size: 0.78rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: #fff5ef;
+      text-shadow: 0 2px 12px rgba(45, 24, 18, 0.35);
+      margin-bottom: 22px;
+      font-weight: 500;
+    }
+
+    .hero h1 {
+      font-size: clamp(3rem, 7.5vw, 4.6rem);
+      color: #fff8f3;
+      text-shadow: 0 3px 20px rgba(45, 24, 18, 0.38);
+      margin-bottom: 14px;
+      font-weight: 600;
+      line-height: 1.12;
+    }
+
+    .hero .divider-ornament {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      margin: 0 auto 26px;
+    }
+
+    .hero .divider-ornament span {
+      width: 40px;
+      height: 1px;
+      background: var(--rose);
+    }
+
+    .hero .divider-ornament i {
+      color: var(--gold);
+      font-style: normal;
+      font-size: 0.7rem;
+    }
+
+    .hero p {
+      font-size: 1.08rem;
+      color: #fff3ec;
+      text-shadow: 0 2px 10px rgba(45, 24, 18, 0.38);
+      max-width: 460px;
+      margin: 0 auto 42px;
+      font-weight: 300;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 34px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+      transition: all 0.35s ease;
+    }
+
+    .btn-primary {
+      background: var(--dark);
+      color: var(--cream);
+      box-shadow: 0 6px 20px rgba(42, 33, 28, 0.18);
+    }
+
+    .btn-primary:hover {
+      background: var(--rose-deep);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(166, 122, 104, 0.3);
+    }
+
+    .btn-outline {
+      background: rgba(70, 37, 29, 0.22);
+      color: #fff8f3;
+      border: 1.5px solid rgba(255, 248, 243, 0.88);
+      margin-left: 10px;
+    }
+
+    .btn-outline:hover {
+      background: var(--rose);
+      color: var(--cream);
+      border-color: var(--rose);
+    }
+
+    /* SECTIONS */
+    section { padding: 100px 0; }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-header .label {
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--rose-deep);
+      margin-bottom: 14px;
+      display: block;
+      font-weight: 500;
+    }
+
+    .section-header h2 {
+      font-size: clamp(2.1rem, 4vw, 2.8rem);
+      color: var(--dark);
+      margin-bottom: 14px;
+    }
+
+    .section-header p {
+      max-width: 500px;
+      margin: 0 auto;
+      color: var(--text-soft);
+      font-size: 0.98rem;
+      font-weight: 300;
+    }
+
+    .section-header .ornament {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .section-header .ornament span {
+      width: 32px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .section-header .ornament i {
+      color: var(--gold);
+      font-style: normal;
+      font-size: 0.6rem;
+    }
+
+    /* ABOUT */
+    .about { background: var(--cream); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 1fr;
+      gap: 56px;
+      align-items: center;
+    }
+
+    .about-img {
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(42, 33, 28, 0.12);
+      position: relative;
+    }
+
+    .about-img::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border: 1px solid rgba(196, 160, 106, 0.3);
+      border-radius: 4px;
+      pointer-events: none;
+    }
+
+    .about-img img {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+    }
+
+    .about-text h3 {
+      font-size: 1.85rem;
+      margin-bottom: 18px;
+      color: var(--dark);
+    }
+
+    .about-text p {
+      margin-bottom: 16px;
+      color: var(--text-soft);
+      font-size: 0.96rem;
+      font-weight: 300;
+    }
+
+    .about-features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .feature {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.9rem;
+      color: var(--text);
+      background: var(--bg);
+      padding: 12px 14px;
+      border-radius: 3px;
+    }
+
+    .feature span:first-child {
+      color: var(--gold);
+      font-size: 0.75rem;
+    }
+
+    /* SERVICES */
+    .services { background: var(--bg); }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .service-card {
+      background: var(--cream);
+      padding: 38px 28px;
+      text-align: center;
+      border-radius: 4px;
+      transition: all 0.35s ease;
+      border: 1px solid transparent;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--rose), var(--gold));
+      opacity: 0;
+      transition: opacity 0.35s ease;
+    }
+
+    .service-card:hover {
+      border-color: var(--line);
+      box-shadow: 0 16px 40px rgba(42, 33, 28, 0.08);
+      transform: translateY(-4px);
+    }
+
+    .service-card:hover::before { opacity: 1; }
+
+    .service-icon {
+      width: 52px;
+      height: 52px;
+      margin: 0 auto 18px;
+      background: linear-gradient(135deg, var(--blush), var(--bg-deep));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      color: var(--rose-deep);
+    }
+
+    .service-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 12px;
+      color: var(--dark);
+    }
+
+    .service-card p {
+      font-size: 0.9rem;
+      color: var(--text-soft);
+      line-height: 1.65;
+      font-weight: 300;
+    }
+
+    /* GALLERY */
+    .gallery { background: var(--cream); overflow: hidden; }
+
+    .gallery-grid { display: none; }
+
+    .gallery-marquee {
+      width: 100%;
+      overflow: hidden;
+      mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+      -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+      perspective: 1200px;
+    }
+    .gallery-track {
+      display: flex;
+      gap: 18px;
+      width: max-content;
+      animation: gallery-scroll 42s linear infinite;
+      transform-style: preserve-3d;
+      padding: 10px 0 24px;
+    }
+    .gallery-track:hover { animation-play-state: paused; }
+    .gallery-item {
+      overflow: hidden;
+      border-radius: 16px;
+      width: 260px;
+      height: 320px;
+      flex-shrink: 0;
+      box-shadow: 0 16px 40px rgba(42, 33, 28, 0.14);
+      position: relative;
+      transform: rotateY(-6deg) translateZ(0);
+      transition: transform 0.45s ease, box-shadow 0.45s ease;
+    }
+    .gallery-item:nth-child(even) { transform: rotateY(6deg) translateY(12px); }
+    .gallery-item:hover {
+      transform: rotateY(0deg) translateY(-8px) scale(1.04);
+      box-shadow: 0 28px 55px rgba(42, 33, 28, 0.22);
+      z-index: 2;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.55s ease;
+    }
+    .gallery-item:hover img { transform: scale(1.08); }
+    @keyframes gallery-scroll {
+      from { transform: translate3d(0,0,0); }
+      to { transform: translate3d(-50%,0,0); }
+    }
+    @media (max-width: 600px) {
+      .gallery-item { width: 200px; height: 250px; }
+      .gallery-track { gap: 12px; animation-duration: 32s; }
+    }
+
+    /* PRICES */
+    .prices { background: var(--bg); }
+
+    .price-wrapper {
+      max-width: 680px;
+      margin: 0 auto;
+      background: var(--cream);
+      border: 1.5px solid var(--gold);
+      border-radius: 4px;
+      padding: 48px 40px;
+      box-shadow: 0 12px 40px rgba(42, 33, 28, 0.06);
+    }
+
+    .price-category { margin-bottom: 34px; }
+    .price-category:last-child { margin-bottom: 0; }
+
+    .price-category h3 {
+      font-size: 1.25rem;
+      color: var(--rose-deep);
+      text-align: center;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      font-weight: 500;
+    }
+
+    .price-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 0.94rem;
+    }
+
+    .price-row:last-child { border-bottom: none; }
+
+    .price-name { color: var(--text-soft); }
+    .price-value {
+      color: var(--dark);
+      font-weight: 500;
+      margin-left: 16px;
+      white-space: nowrap;
+    }
+
+    .price-note {
+      text-align: center;
+      margin-top: 26px;
+      font-size: 0.82rem;
+      color: var(--rose-deep);
+      font-style: italic;
+    }
+
+    /* CONTACT */
+    .contact {
+      background: var(--dark);
+      color: var(--blush);
+    }
+
+    .contact .section-header .label { color: var(--gold-light); }
+    .contact .section-header h2 { color: var(--cream); }
+    .contact .section-header p { color: var(--rose); }
+    .contact .ornament span { background: var(--gold); }
+    .contact .ornament i { color: var(--gold); }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .contact-info h3 {
+      font-size: 1.5rem;
+      color: var(--cream);
+      margin-bottom: 28px;
+    }
+
+    .contact-item {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+
+    .contact-item strong {
+      display: block;
+      color: var(--gold-light);
+      font-weight: 500;
+      margin-bottom: 4px;
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+    }
+
+    .contact-item span,
+    .contact-item a {
+      color: var(--blush);
+      font-size: 0.95rem;
+      font-weight: 300;
+    }
+
+    .contact-item a:hover { color: var(--cream); }
+
+    .map-box {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(196, 160, 106, 0.25);
+      border-radius: 14px;
+      height: 320px;
+      overflow: hidden;
+      position: relative;
+      color: var(--blush);
+      font-size: 0.92rem;
+      padding: 0;
+    }
+    .map-box iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+      filter: grayscale(0.15) contrast(1.05);
+    }
+    .map-box .map-fallback {
+      position: absolute; left: 14px; bottom: 14px; z-index: 2;
+      background: rgba(28, 20, 16, 0.82);
+      color: var(--gold-light);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      text-decoration: none;
+      border: 1px solid rgba(196,160,106,0.35);
+    }
+    .map-box a {
+      color: var(--gold-light);
+      border-bottom: 1px solid var(--gold);
+      padding-bottom: 2px;
+      font-size: 0.88rem;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #1c1714;
+      padding: 40px 0;
+      text-align: center;
+      color: var(--rose-deep);
+      font-size: 0.82rem;
+    }
+
+    footer .logo-text {
+      color: var(--blush);
+      margin-bottom: 10px;
+      display: inline-block;
+    }
+
+    footer p { margin-top: 6px; font-weight: 300; }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px; left: 0; right: 0;
+        background: var(--bg);
+        flex-direction: column;
+        padding: 22px 28px;
+        gap: 16px;
+        border-bottom: 1px solid var(--line);
+      }
+      .nav-links.open { display: flex; }
+      .burger { display: flex; }
+
+      .about-grid,
+      .contact-grid { grid-template-columns: 1fr; gap: 36px; }
+      .about-img img { height: 360px; }
+
+      .services-grid {
+        grid-template-columns: 1fr 1fr;
+        max-width: 100%;
+        margin: 0 auto;
+        gap: 16px;
+      }
+
+      .price-wrapper { padding: 36px 24px; }
+
+      .btn-outline {
+        margin-left: 10px;
+        margin-top: 0;
+        display: inline-block;
+      }
+      .hero-content .btn { display: inline-block; margin: 6px; }
+      .gallery-item { width: 230px; height: 290px; }
+      .map-box { height: 300px; }
+    }
+
+    @media (max-width: 520px) {
+      .services-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 600px) {
+      section { padding: 70px 0; }
+      /* */
+      /* gallery marquee */
+      .about-features { grid-template-columns: 1fr; }
+    }
+
+    /* Online appointment request */
+    .booking-card { max-width: 820px; margin: 0 auto 56px; padding: clamp(22px, 4vw, 38px); background: var(--cream); border: 1px solid rgba(166,122,104,.24); border-radius: 18px; box-shadow: 0 16px 45px rgba(80,48,35,.07); }
+    .booking-card h3 { margin: 0 0 8px; font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 600; }
+    .booking-intro { margin: 0 0 24px; color: #76665e; line-height: 1.7; }
+    .booking-form { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+    .booking-field { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+    .booking-field.full { grid-column: 1 / -1; }
+    .booking-field label { font-size: .78rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: #6e5145; }
+    .booking-field input, .booking-field select, .booking-field textarea { width: 100%; min-height: 48px; padding: 12px 14px; color: #3d302b; background: #fffdfb; border: 1px solid #dfcfc5; border-radius: 9px; font: inherit; box-sizing: border-box; }
+    .booking-field input:focus, .booking-field select:focus, .booking-field textarea:focus { outline: 2px solid rgba(201,154,136,.35); border-color: var(--rose-deep); }
+    .booking-submit { grid-column: 1 / -1; justify-self: start; border: 0; cursor: pointer; font: inherit; touch-action: manipulation; -webkit-tap-highlight-color: rgba(37, 211, 102, .25); position: relative; z-index: 2; }
+    .booking-note { grid-column: 1 / -1; margin: -4px 0 0; font-size: .84rem; color: #76665e; line-height: 1.6; }
+    @media (max-width: 600px) { .booking-form { grid-template-columns: 1fr; } .booking-field.full, .booking-submit, .booking-note { grid-column: 1; } .booking-submit { width: 100%; } }
+
+
+</style>
+<link rel="stylesheet" href="enhancements.css"><link rel="stylesheet" href="motion.css">
+</head>
+<body>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <nav id="navbar">
+    <div class="container nav-inner">
+      <a href="#home" class="logo-text">Eva's <span>Nails</span> Art</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">Studio</a></li>
+        <li><a href="#services">Leistungen</a></li>
+        <li><a href="#gallery">Galerie</a></li>
+        <li><a href="#prices">Preise</a></li>
+        <li><a href="#contact" class="nav-cta">Termin</a></li>
+      </ul>
+      <button class="burger" id="menuToggle" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <video class="hero-video" id="heroVideo" autoplay muted loop playsinline webkit-playsinline x5-playsinline preload="metadata" poster="assets/hero-poster.jpg" disablepictureinpicture disableremoteplayback aria-hidden="true" tabindex="-1">
+      <source src="assets/hero-clear.mp4" type="video/mp4">
+    </source></video>
+    <div class="hero-content">
+      <p class="eyebrow">Nagelstudio · Stuttgart</p>
+      <h1>Eva's Nails Art</h1>
+      <div class="divider-ornament">
+        <span></span><i>✦</i><span></span>
+      </div>
+      <p>Eleganz an den Fingerspitzen. Professionelle Behandlungen in einem stilvollen Ambiente.</p>
+      <div>
+        <a href="#contact" class="btn btn-primary">Termin vereinbaren</a>
+        <a href="#services" class="btn btn-outline">Leistungen ansehen</a>
+      </div>
+    </div>
+  <a class="hero-scroll" href="#about" aria-label="Unser Studio entdecken">ENTDECKEN <span>↓</span></a></section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about"><div class="container studio-editorial">
+ <div class="studio-story">
+  <span class="studio-eyebrow">WILLKOMMEN BEI EVA</span>
+  <h2>Unser Studio</h2>
+  <p class="studio-intro">Ankommen. Durchatmen.<br><em>Schön fühlen.</em></p>
+  <div class="studio-rule" aria-hidden="true"></div>
+  <p>In unserem Nagelstudio in Stuttgart erwarten Sie eine ruhige Atmosphäre und individuelle Beratung. Ein Ort für Schönheit – und eine kleine Auszeit vom Alltag.</p>
+  <p>Ob klassische Maniküre, kreatives Nail Design oder Augenbrauen- und Wimpernbehandlungen: Wir nehmen uns Zeit für Ihren persönlichen Look.</p>
+  </div>
+ <div class="studio-composition">
+  <div class="studio-photo-main studio-scene">
+   <button type="button" class="studio-image image-open" data-image="assets/studio-interior-1.webp" data-caption="Unser Studio · Rotebühlstraße 102" aria-label="Unser Studio mit Blumenwand – Foto vergrößern">
+    <img src="assets/studio-interior-1.webp" width="960" height="1280" alt="Blick in Eva’s Nails Art mit Blumenwand und Maniküreplätzen" loading="lazy" decoding="async">
+    
+   </button>
+  </div>
+  <div class="studio-photo-detail studio-scene">
+   <button type="button" class="studio-image image-open" data-image="assets/studio-interior-2.webp" data-caption="Ein Platz für deine Beauty-Auszeit" aria-label="Maniküreplätze und Behandlungsbereich – Foto vergrößern">
+    <img src="assets/studio-interior-2.webp" width="960" height="1280" alt="Maniküretisch mit gepolsterten Stühlen und Behandlungsbereich im Hintergrund" loading="lazy" decoding="async">
+    
+   </button>
+  </div>
+  <p class="studio-photo-note">Ein kleiner Einblick.<br><em>Ein gutes Gefühl.</em></p>
+ </div>
+</div></section><!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-header">
+        <span class="label">Leistungen</span>
+        <h2>Was wir anbieten</h2>
+        <p>Von klassischen Behandlungen bis zu anspruchsvollen Designs – alles aus einer Hand.</p>
+        <div class="ornament"><span></span><i>✦</i><span></span></div>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">💅</div>
+          <h3>Maniküre &amp; Gel</h3>
+          <p>Klassische Maniküre, Schellack, Nagelverlängerung und Auffüllen mit langanhaltenden Ergebnissen.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">✨</div>
+          <h3>Nail Art</h3>
+          <p>Individuelle Designs, French, Ombré, Glitzer und kreative Motive – ganz nach Ihrem Geschmack.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🦶</div>
+          <h3>Pediküre</h3>
+          <p>Entspannende Fußpflege mit Lack, Schellack oder Gel – für gepflegte und schöne Füße.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">👁</div>
+          <h3>Lash Lift</h3>
+          <p>Natürliches Wimpernlifting für einen wachen, ausdrucksstarken Blick.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">✏️</div>
+          <h3>Brow Lamination</h3>
+          <p>Augenbrauen-Lifting und Formgebung für vollere, gepflegte Brauen.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🖌</div>
+          <h3>Microblading</h3>
+          <p>Präzises Microblading für natürliche, dauerhafte Augenbrauen.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery" id="gallery">
+    <div class="container">
+      <div class="section-header">
+        <span class="label">Inspiration</span>
+        <h2>Galerie</h2>
+        <div class="ornament"><span></span><i>✦</i><span></span></div>
+      </div>
+      <div class="gallery-marquee" aria-label="Bildergalerie" tabindex="0">
+        <div class="gallery-track"><div class="gallery-group"><button class="gallery-item image-open" type="button" data-image="assets/photo_2026-10-19_00-00-06.webp" data-caption="Coral &amp; Gold" aria-label="Korallfarbene Nägel mit goldenen Akzenten – vergrößern"><img src="assets/photo_2026-10-19_00-00-06.webp" alt="Korallfarbene Nägel mit goldenen Akzenten" loading="lazy" decoding="async" width="853" height="1280"><span class="gallery-label">Coral &amp; Gold</span></button><button class="gallery-item image-open" type="button" data-image="assets/photo_2026-10-19_00-00-10.webp" data-caption="Pastellgrün" aria-label="Nägel in Pastellgrün – vergrößern"><img src="assets/photo_2026-10-19_00-00-10.webp" alt="Nägel in Pastellgrün" loading="lazy" decoding="async" width="853" height="1280"><span class="gallery-label">Pastellgrün</span></button><button class="gallery-item image-open" type="button" data-image="assets/photo_2026-10-19_00-00-15.webp" data-caption="Blush Details" aria-label="Rosa Nägel mit feinen Verzierungen – vergrößern"><img src="assets/photo_2026-10-19_00-00-15.webp" alt="Rosa Nägel mit feinen Verzierungen" loading="lazy" decoding="async" width="853" height="1280"><span class="gallery-label">Blush Details</span></button><button class="gallery-item image-open" type="button" data-image="assets/photo_2026-10-19_00-00-19.webp" data-caption="Flower Art" aria-label="Nageldesign mit plastischen Blumen – vergrößern"><img src="assets/photo_2026-10-19_00-00-19.webp" alt="Nageldesign mit plastischen Blumen" loading="lazy" decoding="async" width="853" height="1280"><span class="gallery-label">Flower Art</span></button><button class="gallery-item image-open" type="button" data-image="assets/photo_2026-10-19_00-00-22.webp" data-caption="Pink Mood" aria-label="Pinkfarbene Nagelspitzen – vergrößern"><img src="assets/photo_2026-10-19_00-00-22.webp" alt="Pinkfarbene Nagelspitzen" loading="lazy" decoding="async" width="853" height="1280"><span class="gallery-label">Pink Mood</span></button><button class="gallery-item image-open" type="button" data-image="assets/photo_2026-10-19_00-00-25.webp" data-caption="Golden Touch" aria-label="Nageldesign mit glänzenden Goldakzenten – vergrößern"><img src="assets/photo_2026-10-19_00-00-25.webp" alt="Nageldesign mit glänzenden Goldakzenten" loading="lazy" decoding="async" width="853" height="1280"><span class="gallery-label">Golden Touch</span></button><button class="gallery-item image-open" type="button" data-image="assets/photo_2026-10-19_00-00-29.webp" data-caption="Timeless French" aria-label="Klassische French-Maniküre – vergrößern"><img src="assets/photo_2026-10-19_00-00-29.webp" alt="Klassische French-Maniküre" loading="lazy" decoding="async" width="853" height="1280"><span class="gallery-label">Timeless French</span></button><button class="gallery-item image-open" type="button" data-image="assets/photo_2026-10-19_00-00-32.webp" data-caption="Little Artworks" aria-label="Bunte detailreiche Nail Art – vergrößern"><img src="assets/photo_2026-10-19_00-00-32.webp" alt="Bunte detailreiche Nail Art" loading="lazy" decoding="async" width="853" height="1280"><span class="gallery-label">Little Artworks</span></button><button class="gallery-item image-open" type="button" data-image="assets/photo_2026-10-18_21-11-26.webp" data-caption="Brow Beauty" aria-label="Nahaufnahme einer geformten Augenbraue – vergrößern"><img src="assets/photo_2026-10-18_21-11-26.webp" alt="Nahaufnahme einer geformten Augenbraue" loading="lazy" decoding="async" width="853" height="1280"><span class="gallery-label">Brow Beauty</span></button><button class="gallery-item image-open" type="button" data-image="assets/photo_2026-10-18_21-11-39.webp" data-caption="Defined Brows" aria-label="Definierte Augenbraue und Wimpern – vergrößern"><img src="assets/photo_2026-10-18_21-11-39.webp" alt="Definierte Augenbraue und Wimpern" loading="lazy" decoding="async" width="853" height="1280"><span class="gallery-label">Defined Brows</span></button><button class="gallery-item image-open" type="button" data-image="assets/photo_2026-10-18_23-44-57.webp" data-caption="Lash Love" aria-label="Nahaufnahme geschwungener Wimpern – vergrößern"><img src="assets/photo_2026-10-18_23-44-57.webp" alt="Nahaufnahme geschwungener Wimpern" loading="lazy" decoding="async" width="853" height="1280"><span class="gallery-label">Lash Love</span></button></div><div class="gallery-group" aria-hidden="true"><button class="gallery-item image-open" type="button" data-image="assets/photo_2026-10-19_00-00-06.webp" data-caption="Coral &amp; Gold" aria-label="Korallfarbene Nägel mit goldenen Akzenten – vergrößern" tabindex="-1"><img src="assets/photo_2026-10-19_00-00-06.webp" alt="" loading="lazy" decoding="async" width="853" height="1280"><span class="gallery-label">Coral &amp; Gold</span></button><button class="gallery-item image-open" type="button" data-image="assets/photo_2026-10-19_00-00-10.webp" data-caption="Pastellgrün" aria-label="Nägel in Pastellgrün – vergrößern" tabindex="-1"><img src="assets/photo_2026-10-19_00-00-10.webp" alt="" loading="lazy" decoding="async" width="853" height="1280"><span class="gallery-label">Pastellgrün</span></button><button class="gallery-item image-open" type="button" data-image="assets/photo_2026-10-19_00-00-15.webp" data-caption="Blush Details" aria-label="Rosa Nägel mit feinen Verzierungen – vergrößern" tabindex="-1"><img src="assets/photo_2026-10-19_00-00-15.webp" alt="" loading="lazy" decoding="async" width="853" height="1280"><span class="gallery-label">Blush Details</span></button><button class="gallery-item image-open" type="button" data-image="assets/photo_2026-10-19_00-00-19.webp" data-caption="Flower Art" aria-label="Nageldesign mit plastischen Blumen – vergrößern" tabindex="-1"><img src="assets/photo_2026-10-19_00-00-19.webp" alt="" loading="lazy" decoding="async" width="853" height="1280"><span class="gallery-label">Flower Art</span></button><button class="gallery-item image-open" type="button" data-image="assets/photo_2026-10-19_00-00-22.webp" data-caption="Pink Mood" aria-label="Pinkfarbene Nagelspitzen – vergrößern" tabindex="-1"><img src="assets/photo_2026-10-19_00-00-22.webp" alt="" loading="lazy" decoding="async" width="853" height="1280"><span class="gallery-label">Pink Mood</span></button><button class="gallery-item image-open" type="button" data-image="assets/photo_2026-10-19_00-00-25.webp" data-caption="Golden Touch" aria-label="Nageldesign mit glänzenden Goldakzenten – vergrößern" tabindex="-1"><img src="assets/photo_2026-10-19_00-00-25.webp" alt="" loading="lazy" decoding="async" width="853" height="1280"><span class="gallery-label">Golden Touch</span></button><button class="gallery-item image-open" type="button" data-image="assets/photo_2026-10-19_00-00-29.webp" data-caption="Timeless French" aria-label="Klassische French-Maniküre – vergrößern" tabindex="-1"><img src="assets/photo_2026-10-19_00-00-29.webp" alt="" loading="lazy" decoding="async" width="853" height="1280"><span class="gallery-label">Timeless French</span></button><button class="gallery-item image-open" type="button" data-image="assets/photo_2026-10-19_00-00-32.webp" data-caption="Little Artworks" aria-label="Bunte detailreiche Nail Art – vergrößern" tabindex="-1"><img src="assets/photo_2026-10-19_00-00-32.webp" alt="" loading="lazy" decoding="async" width="853" height="1280"><span class="gallery-label">Little Artworks</span></button><button class="gallery-item image-open" type="button" data-image="assets/photo_2026-10-18_21-11-26.webp" data-caption="Brow Beauty" aria-label="Nahaufnahme einer geformten Augenbraue – vergrößern" tabindex="-1"><img src="assets/photo_2026-10-18_21-11-26.webp" alt="" loading="lazy" decoding="async" width="853" height="1280"><span class="gallery-label">Brow Beauty</span></button><button class="gallery-item image-open" type="button" data-image="assets/photo_2026-10-18_21-11-39.webp" data-caption="Defined Brows" aria-label="Definierte Augenbraue und Wimpern – vergrößern" tabindex="-1"><img src="assets/photo_2026-10-18_21-11-39.webp" alt="" loading="lazy" decoding="async" width="853" height="1280"><span class="gallery-label">Defined Brows</span></button><button class="gallery-item image-open" type="button" data-image="assets/photo_2026-10-18_23-44-57.webp" data-caption="Lash Love" aria-label="Nahaufnahme geschwungener Wimpern – vergrößern" tabindex="-1"><img src="assets/photo_2026-10-18_23-44-57.webp" alt="" loading="lazy" decoding="async" width="853" height="1280"><span class="gallery-label">Lash Love</span></button></div></div>
+      </div>
+    <div class="gallery-controls"><p>Nails, Brows &amp; Lashes · Entdecke deinen nächsten Look.</p></div></div>
+  </section>
+
+  <!-- PRICES -->
+  <section class="prices" id="prices">
+    <div class="container">
+      <div class="section-header">
+        <h2>Preisliste</h2>
+        <div class="ornament"><span></span><i>✦</i><span></span></div>
+      </div>
+      <div class="price-wrapper">
+        <div class="price-category">
+          <h3>Finger Nägel</h3>
+          <div class="price-row"><span class="price-name">Maniküre (mit Lack)</span><span class="price-value">30 €</span></div>
+          <div class="price-row"><span class="price-name">Maniküre mit Schellack</span><span class="price-value">50 €</span></div>
+          <div class="price-row"><span class="price-name">Nagelverlängerung</span><span class="price-value">70 €</span></div>
+          <div class="price-row"><span class="price-name">Nägel Auffüllen</span><span class="price-value">65 €</span></div>
+          <div class="price-row"><span class="price-name">Reparatur</span><span class="price-value">7 €</span></div>
+          <div class="price-row"><span class="price-name">Nagel Design</span><span class="price-value">ab 5 €</span></div>
+        </div>
+        <div class="price-category">
+          <h3>Fussnägel</h3>
+          <div class="price-row"><span class="price-name">Pediküre (mit Lack)</span><span class="price-value">45 €</span></div>
+          <div class="price-row"><span class="price-name">Pediküre mit Schellack</span><span class="price-value">55 €</span></div>
+          <div class="price-row"><span class="price-name">Pediküre mit Gel</span><span class="price-value">60 €</span></div>
+          <div class="price-row"><span class="price-name">Pediküre mit med. Hautlotion</span><span class="price-value">60 €</span></div>
+        </div>
+        <div class="price-category">
+          <h3>Wimpern &amp; Augenbrauen</h3>
+          <div class="price-row"><span class="price-name">Microblading (2. Behandlung)</span><span class="price-value">600 €</span></div>
+          <div class="price-row"><span class="price-name">Augenbrauen Lifting</span><span class="price-value">60 €</span></div>
+          <div class="price-row"><span class="price-name">Wimpern Lifting</span><span class="price-value">70 €</span></div>
+          <div class="price-row"><span class="price-name">Wimpern + Augenbrauen Lifting</span><span class="price-value">120 €</span></div>
+          <div class="price-row"><span class="price-name">Zupfen</span><span class="price-value">12 €</span></div>
+        </div>
+        <p class="price-note">Alle Preise in Euro. Änderungen vorbehalten.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="label">Kontakt</span>
+        <h2>Termin buchen</h2>
+        <p>Wir freuen uns auf Ihren Besuch.</p>
+        <div class="ornament"><span></span><i>✦</i><span></span></div>
+      </div>
+      <div class="booking-card">
+        <h3 style="color:var(--dark)">Deinen Wunschtermin anfragen</h3>
+        <p class="booking-intro">Wähle deine Behandlung und deinen Wunschtermin. Im nächsten Schritt öffnet sich WhatsApp mit deiner vorbereiteten Nachricht. Sende sie dort ab – wir bestätigen den Termin persönlich.</p>
+        <form class="booking-form" id="bookingForm" novalidate="">
+          <p class="booking-status" id="bookingStatus" role="status" aria-live="polite" tabindex="-1" hidden></p><div class="booking-field">
+            <label for="bookingName">Dein Name</label>
+            <input id="bookingName" name="name" type="text" autocomplete="name" placeholder="Vor- und Nachname" required maxlength="140">
+          </div>
+          <div class="booking-field">
+            <label for="bookingPhone">Telefonnummer (optional)</label>
+            <input id="bookingPhone" name="phone" type="tel" autocomplete="tel" placeholder="Deine Telefonnummer">
+          </div>
+          <div class="booking-field">
+            <label for="bookingService">Gewünschte Dienstleistung</label>
+            <select id="bookingService" name="service" required>
+              <option value="" disabled selected>Bitte auswählen</option>
+              <optgroup label="Finger Nägel">
+                <option>Maniküre (mit Lack) — 30 €</option>
+                <option>Maniküre mit Schellack — 50 €</option>
+                <option>Nagelverlängerung — 70 €</option>
+                <option>Nägel Auffüllen — 65 €</option>
+                <option>Reparatur — 7 €</option>
+                <option>Nagel Design — ab 5 €</option>
+              </optgroup>
+              <optgroup label="Fußnägel">
+                <option>Pediküre (mit Lack) — 45 €</option>
+                <option>Pediküre mit Schellack — 55 €</option>
+                <option>Pediküre mit Gel — 60 €</option>
+                <option>Pediküre mit med. Hautlotion — 60 €</option>
+              </optgroup>
+              <optgroup label="Wimpern &amp; Augenbrauen">
+                <option>Microblading (2. Behandlung) — 600 €</option>
+                <option>Augenbrauen Lifting — 60 €</option>
+                <option>Wimpern Lifting — 70 €</option>
+                <option>Wimpern + Augenbrauen Lifting — 120 €</option>
+                <option>Zupfen — 12 €</option>
+              </optgroup>
+            </select>
+          </div>
+          <div class="booking-field">
+            <label for="bookingDate">Wunschdatum</label>
+            <input id="bookingDate" name="date" type="date" required>
+          </div>
+          <div class="booking-field">
+            <label for="bookingTime">Wunschuhrzeit</label>
+            <select id="bookingTime" name="time" required><option value="">Zuerst Datum wählen</option></select>
+          </div>
+          <div class="booking-field full">
+            <label for="bookingNotes">Zusätzliche Wünsche (optional)</label>
+            <textarea id="bookingNotes" name="notes" rows="3" placeholder="z. B. gewünschtes Design oder weitere Informationen" maxlength="1000"></textarea>
+          </div>
+          <button class="btn btn-primary booking-submit" type="submit" id="whatsappBookingButton">Termin per WhatsApp anfragen  →</button>
+          <p class="booking-note">Falls WhatsApp nicht automatisch geöffnet wird: <a id="whatsappBookingFallback" href="https://wa.me/4917680852106">WhatsApp direkt öffnen</a>.</p>
+          <p class="booking-note">Dein Termin gilt erst nach unserer Bestätigung. Die angezeigten Uhrzeiten sind Wunschzeiten, keine Live-Verfügbarkeiten. Deine Angaben werden erst gesendet, wenn du die Nachricht in WhatsApp abschickst.</p>
+        </form>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3>Eva's Nails Art</h3>
+          <div class="contact-item">
+            <div>
+              <strong>Adresse</strong>
+              <span>Rotebühlstraße 102<br>70178 Stuttgart</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div>
+              <strong>Telefon</strong>
+              <a href="tel:+4917680852106">0176 8085 2106</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div>
+              <strong>WhatsApp</strong>
+              <a href="https://wa.me/4917680852106" target="_blank" rel="noopener noreferrer">Nachricht senden</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div>
+              <strong>Öffnungszeiten</strong>
+              <span>Dienstag–Freitag: 09:00–18:30 Uhr<br>Samstag: 09:00–14:00 Uhr</span>
+            </div>
+          </div>
+        </div>
+        <div class="map-box">
+          <iframe title="Eva's Nails Art – Google Maps" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen src="https://www.google.com/maps?q=Roteb%C3%BChlstra%C3%9Fe+102,+70178+Stuttgart&amp;output=embed&amp;z=16">
+          </iframe>
+          <a class="map-fallback" href="https://maps.google.com/?q=Roteb%C3%BChlstra%C3%9Fe+102,+70178+Stuttgart" target="_blank" rel="noopener noreferrer">In Google Maps öffnen →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <a class="whatsapp-float" href="https://wa.me/4917680852106" target="_blank" rel="noopener noreferrer" aria-label="Eva’s Nails Art per WhatsApp kontaktieren"><span class="wa-dot">✆</span><span>WhatsApp · Termin</span></a>
+
+  <footer>
+    <div class="container">
+      <a href="#home" class="logo-text">Eva's <span style="color:var(--rose);font-style:italic;">Nails</span> Art</a>
+      <p>Nagelstudio Stuttgart · Rotebühlstraße 102</p>
+      <p style="margin-top:14px;opacity:0.55;">© 2026 Eva's Nails Art</p>
+    </div>
+  </footer>
+
+  <script src="app.js" defer></script><dialog class="image-dialog" id="imageDialog" aria-label="Foto vergrößert"><button type="button" class="image-close" aria-label="Schließen">×</button><div class="image-stage"><button type="button" id="imagePrev" aria-label="Vorheriges Foto">‹</button><img id="imageFull" alt=""><button type="button" id="imageNext" aria-label="Nächstes Foto">›</button></div><p id="imageCaption"></p></dialog><script src="motion.js" defer></script>
+</body>
+</html>

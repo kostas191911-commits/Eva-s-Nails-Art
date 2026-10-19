@@ -1,0 +1,18 @@
+Eva's Nails Art — Website backup, 19 October 2026
+
+ΕΛΛΗΝΙΚΑ
+1. Κάνε αποσυμπίεση ολόκληρου του ZIP.
+2. Άνοιξε το index.html με Chrome, Edge ή Safari.
+3. Κράτησε τον φάκελο assets και τα αρχεία CSS/JS μαζί με το index.html.
+
+Το βίντεο και οι φωτογραφίες περιλαμβάνονται. Για τις γραμματοσειρές Google,
+τον χάρτη και το WhatsApp χρειάζεται σύνδεση στο internet.
+Αυτό είναι αντίγραφο των αρχείων του site. Οι μελλοντικές αλλαγές στο online site
+δεν ενημερώνουν αυτόματα αυτό το ZIP.
+
+DEUTSCH
+ZIP vollständig entpacken und index.html im Browser öffnen.
+Den Ordner assets sowie die CSS-/JS-Dateien zusammen mit index.html behalten.
+Für Google-Schriften, Google Maps und WhatsApp ist Internet erforderlich.
+
+Online: https://evas-nails-art.richlamb1024.chatgpt.site
